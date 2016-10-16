@@ -17,6 +17,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let taskList = TaskListViewController()
+        let navigation = UINavigationController(rootViewController: taskList)
+        
+        
+        let navigationBar = navigation.navigationBar
+        navigationBar.topItem?.title = "Todos"
+        let stats = UIBarButtonItem.init(title: "Statistics", style: .plain, target: self, action: nil)
+        let addTask = UIBarButtonItem.init(title: "+", style: .plain, target: self, action: nil)
+        
+        stats.customView = UIButton(frame: CGRectFromString("Stat"))
+        addTask.customView = UIButton(frame: CGRectFromString("+"))
+//        stats.tintColor = .black
+//        let navigationItem = UINavigationItem.init(title: "Stats")
+//        navigationBar.pushItem(navigationItem, animated: true)
+        navigationBar.topItem?.leftBarButtonItems?.append(stats)
+        navigationBar.addSubview(UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10)))
+        navigationBar.topItem?.rightBarButtonItem? = addTask
+        navigationBar.topItem?.rightBarButtonItem?.title = "+"
+        navigationBar.frame = CGRect(x: 0, y: 0, width: (window?.bounds.width)!, height: (window?.bounds.height)!/9)
+        navigationBar.backgroundColor = UIColor.green
+        navigation.view.addSubview(navigationBar)
+        taskList.tableView.frame = CGRect(x: 0, y: navigationBar.frame.height - 10, width: (window?.bounds.width)!, height: (window?.bounds.height)! - navigationBar.frame.height + 10)
+        window?.rootViewController = navigation
+        navigation.view.addSubview(taskList.tableView)
+        
+        
+        
+        
         return true
     }
 

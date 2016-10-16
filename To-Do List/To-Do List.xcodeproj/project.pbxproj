@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		F81314F01DA98EDA00C5D61F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81314EF1DA98EDA00C5D61F /* AppDelegate.swift */; };
-		F81314F21DA98EDA00C5D61F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81314F11DA98EDA00C5D61F /* ViewController.swift */; };
-		F81314F51DA98EDA00C5D61F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81314F31DA98EDA00C5D61F /* Main.storyboard */; };
+		F81314F21DA98EDA00C5D61F /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81314F11DA98EDA00C5D61F /* TaskListViewController.swift */; };
 		F81314F81DA98EDA00C5D61F /* To_Do_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F81314F61DA98EDA00C5D61F /* To_Do_List.xcdatamodeld */; };
 		F81314FA1DA98EDB00C5D61F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F81314F91DA98EDB00C5D61F /* Assets.xcassets */; };
 		F81314FD1DA98EDB00C5D61F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81314FB1DA98EDB00C5D61F /* LaunchScreen.storyboard */; };
 		F81315081DA98EDB00C5D61F /* To_Do_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81315071DA98EDB00C5D61F /* To_Do_ListTests.swift */; };
 		F81315131DA98EDC00C5D61F /* To_Do_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81315121DA98EDC00C5D61F /* To_Do_ListUITests.swift */; };
+		F86EE95A1DAC85C90075F590 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EE9591DAC85C90075F590 /* AddTaskViewController.swift */; };
+		F86EE95C1DAC86180075F590 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EE95B1DAC86180075F590 /* StatisticsViewController.swift */; };
+		F86EE9601DAC8DFD0075F590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F86EE95F1DAC8DFD0075F590 /* Main.storyboard */; };
+		F8D7170A1DAB551000DE73B0 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D717091DAB550F00DE73B0 /* TaskItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +40,7 @@
 /* Begin PBXFileReference section */
 		F81314EC1DA98EDA00C5D61F /* To-Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To-Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81314EF1DA98EDA00C5D61F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F81314F11DA98EDA00C5D61F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F81314F41DA98EDA00C5D61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F81314F11DA98EDA00C5D61F /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		F81314F71DA98EDA00C5D61F /* To_Do_List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = To_Do_List.xcdatamodel; sourceTree = "<group>"; };
 		F81314F91DA98EDB00C5D61F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F81314FC1DA98EDB00C5D61F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		F813150E1DA98EDC00C5D61F /* To-Do ListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "To-Do ListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81315121DA98EDC00C5D61F /* To_Do_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Do_ListUITests.swift; sourceTree = "<group>"; };
 		F81315141DA98EDC00C5D61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F86EE9591DAC85C90075F590 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		F86EE95B1DAC86180075F590 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		F86EE95F1DAC8DFD0075F590 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		F8D717091DAB550F00DE73B0 /* TaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				F81314EF1DA98EDA00C5D61F /* AppDelegate.swift */,
-				F81314F11DA98EDA00C5D61F /* ViewController.swift */,
-				F81314F31DA98EDA00C5D61F /* Main.storyboard */,
-				F81314F91DA98EDB00C5D61F /* Assets.xcassets */,
-				F81314FB1DA98EDB00C5D61F /* LaunchScreen.storyboard */,
-				F81314FE1DA98EDB00C5D61F /* Info.plist */,
-				F81314F61DA98EDA00C5D61F /* To_Do_List.xcdatamodeld */,
+				F81314F11DA98EDA00C5D61F /* TaskListViewController.swift */,
+				F86EE9591DAC85C90075F590 /* AddTaskViewController.swift */,
+				F86EE95B1DAC86180075F590 /* StatisticsViewController.swift */,
+				F8D717091DAB550F00DE73B0 /* TaskItem.swift */,
+				F8D717081DAB14EF00DE73B0 /* Miscellaneous */,
 			);
 			path = "To-Do List";
 			sourceTree = "<group>";
@@ -126,6 +131,18 @@
 				F81315141DA98EDC00C5D61F /* Info.plist */,
 			);
 			path = "To-Do ListUITests";
+			sourceTree = "<group>";
+		};
+		F8D717081DAB14EF00DE73B0 /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				F81314F91DA98EDB00C5D61F /* Assets.xcassets */,
+				F86EE95F1DAC8DFD0075F590 /* Main.storyboard */,
+				F81314FB1DA98EDB00C5D61F /* LaunchScreen.storyboard */,
+				F81314FE1DA98EDB00C5D61F /* Info.plist */,
+				F81314F61DA98EDA00C5D61F /* To_Do_List.xcdatamodeld */,
+			);
+			name = Miscellaneous;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,9 +252,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F86EE9601DAC8DFD0075F590 /* Main.storyboard in Resources */,
 				F81314FD1DA98EDB00C5D61F /* LaunchScreen.storyboard in Resources */,
 				F81314FA1DA98EDB00C5D61F /* Assets.xcassets in Resources */,
-				F81314F51DA98EDA00C5D61F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +279,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F81314F21DA98EDA00C5D61F /* ViewController.swift in Sources */,
+				F81314F21DA98EDA00C5D61F /* TaskListViewController.swift in Sources */,
 				F81314F81DA98EDA00C5D61F /* To_Do_List.xcdatamodeld in Sources */,
 				F81314F01DA98EDA00C5D61F /* AppDelegate.swift in Sources */,
+				F86EE95C1DAC86180075F590 /* StatisticsViewController.swift in Sources */,
+				F8D7170A1DAB551000DE73B0 /* TaskItem.swift in Sources */,
+				F86EE95A1DAC85C90075F590 /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,14 +320,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F81314F31DA98EDA00C5D61F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F81314F41DA98EDA00C5D61F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F81314FB1DA98EDB00C5D61F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -509,6 +521,7 @@
 				F81315191DA98EDC00C5D61F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F813151A1DA98EDC00C5D61F /* Build configuration list for PBXNativeTarget "To-Do ListTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +530,7 @@
 				F813151C1DA98EDC00C5D61F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F813151D1DA98EDC00C5D61F /* Build configuration list for PBXNativeTarget "To-Do ListUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +539,7 @@
 				F813151F1DA98EDC00C5D61F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -16,9 +16,12 @@ class TaskItem {
     // Description of the desired task
     private var taskDescription: String
     
+    var isCompleted: Bool
+    
     init(_ task: String, descriptionOfTask description: String) {
         self.task = task
         self.taskDescription = description
+        self.isCompleted = false
     }
     
     convenience init() {

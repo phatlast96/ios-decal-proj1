@@ -10,7 +10,7 @@ import UIKit
 
 class TaskListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var tasks: [TaskItem] = [TaskItem("Do Laundry", descriptionOfTask: "Two stacks"), TaskItem("Eat food", descriptionOfTask: "Remember the proteins")]
+    var tasks: TaskList = TaskList()
     
     var tableView: UITableView!
     
@@ -39,7 +39,7 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellFrame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 45)
-        let cell: UITableViewCell = TaskListTableViewCell(frame: cellFrame, taskInfo: self.tasks[indexPath.row])
+        let cell: UITableViewCell = TaskListTableViewCell(frame: cellFrame, taskInfo: self.tasks.get(index: indexPath.row))
         return cell
         
     }
@@ -54,7 +54,7 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
             tableView.cellForRow(at: indexPath)?.accessoryType = .none
             taskCell.isCheckedOff = false
         }
-        
+        self.tasks.get(index: indexPath.row).isCompleted = taskCell.isCheckedOff
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {

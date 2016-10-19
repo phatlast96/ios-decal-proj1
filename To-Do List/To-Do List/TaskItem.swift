@@ -16,13 +16,13 @@ class TaskItem {
     // Description of the desired task
     private var taskDescription: String
     
-    init(_ task: String, _ descriptionOfTask: String) {
+    init(_ task: String, descriptionOfTask description: String) {
         self.task = task
-        self.taskDescription = descriptionOfTask
+        self.taskDescription = description
     }
     
     convenience init() {
-        self.init("Random Task", "There is no available information on the task at hand.")
+        self.init("Random Task", descriptionOfTask: "There is no available information on the task at hand.")
     }
     
     func getName() -> String {

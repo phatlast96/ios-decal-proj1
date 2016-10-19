@@ -14,6 +14,7 @@
 		F81314FD1DA98EDB00C5D61F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81314FB1DA98EDB00C5D61F /* LaunchScreen.storyboard */; };
 		F81315081DA98EDB00C5D61F /* To_Do_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81315071DA98EDB00C5D61F /* To_Do_ListTests.swift */; };
 		F81315131DA98EDC00C5D61F /* To_Do_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81315121DA98EDC00C5D61F /* To_Do_ListUITests.swift */; };
+		F860657E1DB5C371004E4BCD /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860657D1DB5C370004E4BCD /* TaskListTableViewCell.swift */; };
 		F86EE95A1DAC85C90075F590 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EE9591DAC85C90075F590 /* AddTaskViewController.swift */; };
 		F86EE95C1DAC86180075F590 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EE95B1DAC86180075F590 /* StatisticsViewController.swift */; };
 		F86EE9601DAC8DFD0075F590 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F86EE95F1DAC8DFD0075F590 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		F813150E1DA98EDC00C5D61F /* To-Do ListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "To-Do ListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81315121DA98EDC00C5D61F /* To_Do_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Do_ListUITests.swift; sourceTree = "<group>"; };
 		F81315141DA98EDC00C5D61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F860657D1DB5C370004E4BCD /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
 		F86EE9591DAC85C90075F590 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		F86EE95B1DAC86180075F590 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		F86EE95F1DAC8DFD0075F590 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				F81314EF1DA98EDA00C5D61F /* AppDelegate.swift */,
 				F81314F11DA98EDA00C5D61F /* TaskListViewController.swift */,
+				F860657D1DB5C370004E4BCD /* TaskListTableViewCell.swift */,
 				F86EE9591DAC85C90075F590 /* AddTaskViewController.swift */,
 				F86EE95B1DAC86180075F590 /* StatisticsViewController.swift */,
 				F8D717091DAB550F00DE73B0 /* TaskItem.swift */,
@@ -285,6 +288,7 @@
 				F86EE95C1DAC86180075F590 /* StatisticsViewController.swift in Sources */,
 				F8D7170A1DAB551000DE73B0 /* TaskItem.swift in Sources */,
 				F86EE95A1DAC85C90075F590 /* AddTaskViewController.swift in Sources */,
+				F860657E1DB5C371004E4BCD /* TaskListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

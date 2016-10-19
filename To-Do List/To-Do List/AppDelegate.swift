@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let taskList = TaskListViewController()
+        let taskList = TaskListTableViewController()
         let navigation = UINavigationController(rootViewController: taskList)
         
         let navigationBar = navigation.navigationBar
@@ -32,10 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.frame = CGRect(x: 0, y: 0, width: (window?.bounds.width)!, height: (window?.bounds.height)!/9)
         navigationBar.backgroundColor = UIColor.blue
         navigation.view.addSubview(navigationBar)
-        taskList.tableView.frame = CGRect(x: 0, y: navigationBar.frame.height - 10, width: (window?.bounds.width)!, height: (window?.bounds.height)! - navigationBar.frame.height + 10)
+        taskList.tableView.frame = CGRect(x: 0, y: navigationBar.frame.height, width: (window?.bounds.width)!, height: (window?.bounds.height)! - navigationBar.frame.height)
         window?.rootViewController = navigation
         navigation.view.addSubview(taskList.tableView)
-        
         
         
         

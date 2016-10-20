@@ -47,8 +47,6 @@ class AddTaskViewController: UIViewController {
         view.addSubview(taskDetails)
         view.addSubview(enterButton)
         
-//        let enterButton = UIBarButtonItem.init(title: "Done", style: .plain, target: self, action: #selector(updateList))
-        
     }
     
     init(frame: CGRect, navigationBy navController: UINavigationController) {
@@ -63,7 +61,10 @@ class AddTaskViewController: UIViewController {
     
     @objc private func updateList(sender: UIButton) {
         print("Added an item!")
-        tasks.append(TaskItem(taskName.text!, descriptionOfTask: taskDetails.text!))
+        print("Before: \(self.tasks.count)")
+        print(taskName.text!)
+        self.tasks.append(TaskItem(taskName.text!, descriptionOfTask: taskDetails.text!))
+        print("After: \(self.tasks.count)")
         navigation.popViewController(animated: true)
     }
 }

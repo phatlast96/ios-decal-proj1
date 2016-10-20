@@ -21,7 +21,7 @@ class StatisticsViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         completedTasksDisplay = UILabel.init(frame: self.view.frame)
         if let taskList = tasks {
-            completedTasksDisplay.text = "Completed: \(taskList.numberOfCompletedTasksWithin24Hours)"
+            completedTasksDisplay.text = "Completed: \(taskList.count)"
         } else {
             completedTasksDisplay.text = "Completed: 0"
         }
@@ -31,7 +31,7 @@ class StatisticsViewController: UIViewController {
         self.view.addSubview(completedTasksDisplay)
     }
     
-    init(frame: CGRect) {
+    init(frame: CGRect, taskList: TaskList) {
         super.init(nibName: nil, bundle: nil)
         self.view.frame = frame
     }

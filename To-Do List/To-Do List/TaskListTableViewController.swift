@@ -50,19 +50,17 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @objc private func openStatsPressed(sender: UIButton!) {
-        let statsVC = StatisticsViewController(frame: self.view.frame)
+        let statsVC = StatisticsViewController(frame: self.view.frame, taskList: self.tasks)
         print("Opening the statistics")
-        self.navigation.pushViewController(statsVC, animated: true)
-        self.navigation.view.addSubview(statsVC.view)
         statsVC.tasks = self.tasks
+        self.navigation.pushViewController(statsVC, animated: true)
     }
     
     @objc private func addTaskPressed(sender: UIButton!) {
         let addTaskVC = AddTaskViewController(frame: self.view.frame, navigationBy: navigation)
         print("Adding a new task")
-        self.navigation.pushViewController(addTaskVC, animated: true)
-        self.navigation.view.addSubview(addTaskVC.view)
         addTaskVC.tasks = self.tasks
+        self.navigation.pushViewController(addTaskVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

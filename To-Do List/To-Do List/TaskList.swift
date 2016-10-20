@@ -44,6 +44,7 @@ class TaskList {
     
     func append(_ task: TaskItem) {
         taskList += [task]
+        taskList.append(task)
     }
     
     func remove(at index: Int) {

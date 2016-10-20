@@ -14,46 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    private var navigation: UINavigationController!
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let taskList = TaskListTableViewController()
-        let navigation = UINavigationController(rootViewController: taskList)
-        self.navigation = navigation
+        self.window = UIWindow(frame: UIScreen.main.bounds)
         
-        let navigationBar = navigation.navigationBar
-        navigationBar.topItem?.title = "Todos"
-        
-        let stats = UIBarButtonItem.init(title: "Stats", style: .plain, target: self, action: #selector(openStatsPressed))
-        let addTask = UIBarButtonItem.init(title: "+", style: .plain, target: self, action: #selector(addTaskPressed))
-        
-        navigationBar.topItem?.leftBarButtonItem = stats
-        navigationBar.topItem?.rightBarButtonItem = addTask
-        
-        navigationBar.frame = CGRect(x: 0, y: 0, width: (window?.bounds.width)!, height: (window?.bounds.height)!/9)
-        navigationBar.backgroundColor = UIColor.blue
-        navigation.view.addSubview(navigationBar)
-        taskList.tableView.frame = CGRect(x: 0, y: navigationBar.frame.height, width: (window?.bounds.width)!, height: (window?.bounds.height)! - navigationBar.frame.height)
-        window?.rootViewController = navigation
-        navigation.view.addSubview(taskList.tableView)
-        
+        let taskList = TaskListTableViewController(frame: (window?.frame)!)
+        let nav = UINavigationController(rootViewController: taskList)
+        taskList.navigation = nav
+        window?.rootViewController = nav
+        self.window?.makeKeyAndVisible()
         return true
     }
 
-    @objc private func openStatsPressed(sender: UIButton!) {
-        let statsVC = StatisticsViewController(frame: CGRect(x: 0, y: 0, width: (window?.bounds.width)!, height: (window?.bounds.height)!/9))
-        print("Opening the statistics")
-        self.navigation.pushViewController(statsVC, animated: true)
-        self.navigation.view.addSubview(statsVC.view)
-    }
-    
-    @objc private func addTaskPressed(sender: UIButton!) {
-        let addTaskVC = AddTaskViewController(frame: CGRect(x: 0, y: 0, width: (window?.bounds.width)!, height: (window?.bounds.height)!/9))
-        print("Adding a new task")
-        self.navigation.pushViewController(addTaskVC, animated: true)
-        self.navigation.view.addSubview(addTaskVC.view)
-    }
+   
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

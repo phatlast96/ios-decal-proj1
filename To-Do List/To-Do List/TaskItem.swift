@@ -16,6 +16,7 @@ class TaskItem {
     // Description of the desired task
     private var taskDescription: String
     
+    // Tells whether the given task is completed or not
     var isCompleted: Bool
     
     init(_ task: String, descriptionOfTask description: String) {

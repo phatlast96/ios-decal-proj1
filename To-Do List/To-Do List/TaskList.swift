@@ -50,5 +50,12 @@ class TaskList {
         taskList.remove(at: index)
     }
     
+    func completeTask(at index: Int) {
+        completedTasks.append(self.taskList[index])
+    }
+    
+    func revisitTask(at index: Int) {
+        completedTasks.remove(at: index)
+    }
     
 }

@@ -10,11 +10,30 @@ import UIKit
 
 class StatisticsViewController: UIViewController {
     
-    var numberOfCompletedTaskWithin24Hours: UILabel!
+    var completedTasksDisplay: UILabel!
+    
+    var tasks: TaskList!
+    
+    var navigationBar: UINavigationBar!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        completedTasksDisplay = UILabel.init(frame: self.view.frame)
+        if let taskList = tasks {
+            completedTasksDisplay.text = "Completed: \(taskList.numberOfCompletedTasksWithin24Hours)"
+        } else {
+            completedTasksDisplay.text = "Completed: 0"
+        }
+        
+        completedTasksDisplay.font.withSize(CGFloat(30))
+        completedTasksDisplay.backgroundColor = UIColor.lightGray
+        self.view.addSubview(completedTasksDisplay)
+    }
     
     init(frame: CGRect) {
         super.init(nibName: nil, bundle: nil)
-        numberOfCompletedTaskWithin24Hours = UILabel.init(frame: self.view.frame)
+        self.view.frame = frame
     }
     
     required init?(coder aDecoder: NSCoder) {

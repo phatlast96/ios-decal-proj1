@@ -36,8 +36,12 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
         navigationBar.backgroundColor = UIColor.blue
         
         tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.view.frame.height)
-        
+        print("TableView uploaded")
         self.view.addSubview(tableView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     init(frame: CGRect) {
@@ -52,7 +56,6 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
     @objc private func openStatsPressed(sender: UIButton!) {
         let statsVC = StatisticsViewController(frame: self.view.frame, taskList: self.tasks)
         print("Opening the statistics")
-        statsVC.tasks = self.tasks
         self.navigation.pushViewController(statsVC, animated: true)
     }
     
@@ -69,7 +72,11 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellFrame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 45)
-        let cell: UITableViewCell = TaskListTableViewCell(frame: cellFrame, taskInfo: self.tasks.get(index: indexPath.row))
+        let cell: TaskListTableViewCell = TaskListTableViewCell(frame: cellFrame, taskInfo: self.tasks.get(index: indexPath.row))
+        if self.tasks.get(index: indexPath.row).isCompleted {
+            cell.accessoryType = .checkmark
+            cell.isCheckedOff = true
+        }
         return cell
         
     }

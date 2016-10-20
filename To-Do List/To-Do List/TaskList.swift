@@ -12,11 +12,19 @@ class TaskList {
     
     private var taskList: [TaskItem]
     
-    private var completedTasks: [TaskItem]
+    var timer: Timer!
     
     var numberOfCompletedTasksWithin24Hours: Int {
         get {
-            return completedTasks.count
+            var i = 0
+            var count = 0
+            while (i < taskList.count) {
+                if (taskList[i].isCompleted) {
+                    count += 1
+                }
+                i += 1
+            }
+            return count
         }
     }
     
@@ -26,16 +34,53 @@ class TaskList {
         }
     }
     
-    init(listOfTasks: [TaskItem]) {
-        self.taskList = listOfTasks
-        self.completedTasks = []
+    var oldestTaskCompleted: TaskItem! {
+        get {
+            var oldestTask: TaskItem? = nil
+            for task in taskList {
+                if oldestTask === nil && task.isCompleted {
+                    oldestTask = task
+                } else if task.isCompleted && task.timeElapsed > (oldestTask?.timeElapsed)! {
+                    oldestTask = task
+                }
+            }
+            return oldestTask
+        }
     }
     
-    init() {
-        self.taskList = [TaskItem("Create tasks", descriptionOfTask: "Put some tasks in the todo list."),
+    var mostRecentTaskCompleted: TaskItem! {
+        get {
+            var recentTask: TaskItem? = nil
+            for task in taskList {
+                if recentTask === nil && task.isCompleted {
+                    recentTask = task
+                } else if task.isCompleted && task.timeElapsed < (recentTask?.timeElapsed)! {
+                    recentTask = task
+                }
+            }
+            return recentTask
+        }
+    }
+    
+    init(listOfTasks: [TaskItem]) {
+        self.taskList = listOfTasks
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: deleteTimedOutTasks(timer:))
+    }
+    
+    convenience init() {
+        self.init(listOfTasks: [TaskItem("Create tasks", descriptionOfTask: "Put some tasks in the todo list."),
                          TaskItem("Do Laundry", descriptionOfTask: "There are stacks of laundry."),
-                         TaskItem("Eat food", descriptionOfTask: "Remember the proteins!")]
-        self.completedTasks = []
+                         TaskItem("Eat food", descriptionOfTask: "Remember the proteins!")])
+    }
+    
+    @objc private func deleteTimedOutTasks(timer: Timer) {
+        var i = 0
+        while (i < taskList.count) {
+            if taskList[i].isPast24Hours {
+                taskList.remove(at: i)
+            }
+            i += 1
+        }
     }
     
     func get(index: Int) -> TaskItem {
@@ -43,7 +88,6 @@ class TaskList {
     }
     
     func append(_ task: TaskItem) {
-        taskList += [task]
         taskList.append(task)
     }
     
@@ -52,11 +96,15 @@ class TaskList {
     }
     
     func completeTask(at index: Int) {
-        completedTasks.append(self.taskList[index])
+        let item = self.taskList[index]
+        item.isCompleted = true
+        item.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: item.updateTimeStatus(timer:))
     }
     
     func revisitTask(at index: Int) {
-        completedTasks.remove(at: index)
+        let item = self.taskList[index]
+        item.isCompleted = false
+        item.timer.invalidate()
     }
     
 }

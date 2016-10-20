@@ -19,10 +19,20 @@ class TaskItem {
     // Tells whether the given task is completed or not
     var isCompleted: Bool
     
+    var isPast24Hours: Bool
+    
+    var timer: Timer!
+    
+    private let twentyFourHourMark: Int = 86400
+    
+    var timeElapsed = 0
+    
     init(_ task: String, descriptionOfTask description: String) {
         self.task = task
         self.taskDescription = description
         self.isCompleted = false
+        self.isPast24Hours = false
+        self.timer = nil
     }
     
     convenience init() {
@@ -35,5 +45,13 @@ class TaskItem {
     
     func getDescription() -> String {
         return taskDescription
+    }
+    
+    @objc func updateTimeStatus(timer: Timer) {
+        self.timeElapsed += 1
+        print(task + ": \(self.timeElapsed)")
+        if self.timeElapsed >= self.twentyFourHourMark {
+            self.isPast24Hours = true
+        }
     }
 }

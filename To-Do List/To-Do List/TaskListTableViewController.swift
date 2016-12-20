@@ -14,8 +14,6 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     var tableView: UITableView!
     
-    var navigation: UINavigationController!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,16 +22,16 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.dataSource = self
         tableView.register(TaskListTableViewCell.self, forCellReuseIdentifier: "taskCell")
         
-        let navigationBar = navigation.navigationBar
-        navigationBar.topItem?.title = "Todos"
+        let navigationBar = self.navigationController?.navigationBar
+        navigationBar?.topItem?.title = "Todos"
         
         let stats = UIBarButtonItem.init(title: "Stats", style: .plain, target: self, action: #selector(openStatsPressed))
         let addTask = UIBarButtonItem.init(title: "+", style: .plain, target: self, action: #selector(addTaskPressed))
         
-        navigationBar.topItem?.leftBarButtonItem = stats
-        navigationBar.topItem?.rightBarButtonItem = addTask
+        navigationBar?.topItem?.leftBarButtonItem = stats
+        navigationBar?.topItem?.rightBarButtonItem = addTask
         
-        navigationBar.backgroundColor = UIColor.blue
+        navigationBar?.backgroundColor = UIColor.blue
         
         tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.view.frame.height)
         print("TableView uploaded")
@@ -56,14 +54,14 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
     @objc private func openStatsPressed(sender: UIButton!) {
         let statsVC = StatisticsViewController(frame: self.view.frame, taskList: self.tasks)
         print("Opening the statistics")
-        self.navigation.pushViewController(statsVC, animated: true)
+        self.navigationController?.pushViewController(statsVC, animated: true)
     }
     
     @objc private func addTaskPressed(sender: UIButton!) {
-        let addTaskVC = AddTaskViewController(frame: self.view.frame, navigationBy: navigation)
+        let addTaskVC = AddTaskViewController(frame: self.view.frame)
         print("Adding a new task")
         addTaskVC.tasks = self.tasks
-        self.navigation.pushViewController(addTaskVC, animated: true)
+        self.navigationController?.pushViewController(addTaskVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let taskList = TaskListTableViewController(frame: (window?.frame)!)
         let nav = UINavigationController(rootViewController: taskList)
-        taskList.navigation = nav
         window?.rootViewController = nav
         self.window?.makeKeyAndVisible()
         return true

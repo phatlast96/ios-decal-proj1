@@ -20,12 +20,11 @@ class AddTaskViewController: UIViewController {
     
     var frame: CGRect!
     
-    var navigation: UINavigationController!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.white
+        let navigation = self.navigationController!
         let navigationBarHeight = navigation.navigationBar.frame.height + navigation.navigationBar.frame.origin.y
         
         taskName = UITextField.init(frame: CGRect(x: 0, y: navigationBarHeight, width: self.view.frame.width, height: self.view.frame.height * 0.1))
@@ -49,10 +48,9 @@ class AddTaskViewController: UIViewController {
         
     }
     
-    init(frame: CGRect, navigationBy navController: UINavigationController) {
+    init(frame: CGRect) {
         super.init(nibName: nil, bundle: nil)
         self.frame = frame
-        self.navigation = navController
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,6 +63,6 @@ class AddTaskViewController: UIViewController {
         print(taskName.text!)
         self.tasks.append(TaskItem(taskName.text!, descriptionOfTask: taskDetails.text!))
         print("After: \(self.tasks.count)")
-        navigation.popViewController(animated: true)
+        self.navigationController!.popViewController(animated: true)
     }
 }

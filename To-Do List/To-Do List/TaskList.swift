@@ -62,15 +62,15 @@ class TaskList {
         }
     }
     
-    init(listOfTasks: [TaskItem]) {
-        self.taskList = listOfTasks
+    init() {
+        taskList = []
         self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: deleteTimedOutTasks(timer:))
     }
     
-    convenience init() {
-        self.init(listOfTasks: [TaskItem("Create tasks", descriptionOfTask: "Put some tasks in the todo list."),
-                         TaskItem("Do Laundry", descriptionOfTask: "There are stacks of laundry."),
-                         TaskItem("Eat food", descriptionOfTask: "Remember the proteins!")])
+    convenience init(listOfTasks: [TaskItem]) {
+        self.init()
+        self.taskList = listOfTasks
+        
     }
     
     @objc private func deleteTimedOutTasks(timer: Timer) {

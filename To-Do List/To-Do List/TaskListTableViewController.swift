@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TaskListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -36,6 +37,27 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: self.view.frame.height)
         print("TableView uploaded")
         self.view.addSubview(tableView)
+        
+        
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDel.persistentContainer.viewContext
+        let fetchRequest:NSFetchRequest<TasksTable> = TasksTable.fetchRequest()
+        do {
+            let taskRecords = try managedContext.fetch(fetchRequest)
+            if taskRecords.count > 0 {
+                for item in taskRecords {
+                    let taskName = item.value(forKey: "name")
+                    let taskDescription = item.value(forKey: "details")
+                    let taskItem = TaskItem.init(taskName as! String, descriptionOfTask: taskDescription as! String)
+                    self.tasks.append(taskItem)
+                }
+            }
+        } catch {
+            
+        }
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -98,6 +120,18 @@ class TaskListTableViewController: UIViewController, UITableViewDelegate, UITabl
         if editingStyle == UITableViewCellEditingStyle.delete {
             self.tasks.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .none)
+            
+            let appDel = UIApplication.shared.delegate as! AppDelegate
+            let managedContext = appDel.persistentContainer.viewContext
+            let fetchRequest:NSFetchRequest<TasksTable> = TasksTable.fetchRequest()
+            do {
+                let taskRecords = try managedContext.fetch(fetchRequest)
+                if taskRecords.count > 0 {
+                    managedContext.delete(taskRecords[indexPath.row])
+                }
+            } catch {
+                
+            }
         }
     }
     

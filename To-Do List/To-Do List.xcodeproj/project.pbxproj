@@ -15,6 +15,8 @@
 		F81314FD1DA98EDB00C5D61F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F81314FB1DA98EDB00C5D61F /* LaunchScreen.storyboard */; };
 		F81315081DA98EDB00C5D61F /* To_Do_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81315071DA98EDB00C5D61F /* To_Do_ListTests.swift */; };
 		F81315131DA98EDC00C5D61F /* To_Do_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81315121DA98EDC00C5D61F /* To_Do_ListUITests.swift */; };
+		F8307E511E0BE2DA004F4313 /* TasksTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8307E4F1E0BE2DA004F4313 /* TasksTable.swift */; };
+		F8307E521E0BE2DA004F4313 /* TasksTable+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8307E501E0BE2DA004F4313 /* TasksTable+CoreDataProperties.swift */; };
 		F860657E1DB5C371004E4BCD /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F860657D1DB5C370004E4BCD /* TaskListTableViewCell.swift */; };
 		F86EE95A1DAC85C90075F590 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EE9591DAC85C90075F590 /* AddTaskViewController.swift */; };
 		F86EE95C1DAC86180075F590 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EE95B1DAC86180075F590 /* StatisticsViewController.swift */; };
@@ -54,6 +56,8 @@
 		F813150E1DA98EDC00C5D61F /* To-Do ListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "To-Do ListUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F81315121DA98EDC00C5D61F /* To_Do_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Do_ListUITests.swift; sourceTree = "<group>"; };
 		F81315141DA98EDC00C5D61F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8307E4F1E0BE2DA004F4313 /* TasksTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksTable.swift; sourceTree = "<group>"; };
+		F8307E501E0BE2DA004F4313 /* TasksTable+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TasksTable+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F860657D1DB5C370004E4BCD /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
 		F86EE9591DAC85C90075F590 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		F86EE95B1DAC86180075F590 /* StatisticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 		F81314E31DA98ED700C5D61F = {
 			isa = PBXGroup;
 			children = (
+				F8307E4F1E0BE2DA004F4313 /* TasksTable.swift */,
+				F8307E501E0BE2DA004F4313 /* TasksTable+CoreDataProperties.swift */,
 				F81314EE1DA98EDA00C5D61F /* To-Do List */,
 				F81315061DA98EDB00C5D61F /* To-Do ListTests */,
 				F81315111DA98EDC00C5D61F /* To-Do ListUITests */,
@@ -219,6 +225,7 @@
 				TargetAttributes = {
 					F81314EB1DA98ED800C5D61F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = L25SEP3S7J;
 						ProvisioningStyle = Automatic;
 					};
 					F81315021DA98EDB00C5D61F = {
@@ -289,6 +296,8 @@
 				F81314F21DA98EDA00C5D61F /* TaskListTableViewController.swift in Sources */,
 				F81314F81DA98EDA00C5D61F /* To_Do_List.xcdatamodeld in Sources */,
 				F81314F01DA98EDA00C5D61F /* AppDelegate.swift in Sources */,
+				F8307E511E0BE2DA004F4313 /* TasksTable.swift in Sources */,
+				F8307E521E0BE2DA004F4313 /* TasksTable+CoreDataProperties.swift in Sources */,
 				F86EE95C1DAC86180075F590 /* StatisticsViewController.swift in Sources */,
 				F8D7170A1DAB551000DE73B0 /* TaskItem.swift in Sources */,
 				F86EE95A1DAC85C90075F590 /* AddTaskViewController.swift in Sources */,
@@ -436,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L25SEP3S7J;
 				INFOPLIST_FILE = "To-Do List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "phat.To-Do-List";
@@ -449,6 +459,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = L25SEP3S7J;
 				INFOPLIST_FILE = "To-Do List/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "phat.To-Do-List";

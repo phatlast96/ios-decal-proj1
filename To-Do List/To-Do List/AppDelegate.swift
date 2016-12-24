@@ -54,16 +54,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         let managedContext = self.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "TasksTable", in: managedContext)
-        let task = NSManagedObject(entity: entity!, insertInto: managedContext)
-        for i in 0..<taskList.tasks.count {
-            task.setValue(taskList.tasks.get(index: i).getName(), forKey: "name")
+        for i in 0..<self.taskList.tasks.count {
+            let task = NSManagedObject(entity: entity!, insertInto: managedContext) // Creates a new record for the table
+            task.setValue(taskList.tasks.get(index: i).getName(), forKey: "name") // Fills the new record with data
             task.setValue(taskList.tasks.get(index: i).getDescription(), forKey: "details")
+            do {
+                try managedContext.save()
+            } catch {
+                
+            }
         }
-        do {
-            try managedContext.save()
-        } catch {
-            
-        }
+       
         self.saveContext()
     }
 
